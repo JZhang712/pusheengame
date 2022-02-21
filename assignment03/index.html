@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Assignment 3</title>
+
+	<!-- the standard p5 drawing and animation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+               integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+               crossorigin="anonymous"
+               referrerpolicy="no-referrer"></script>
+
+    <!-- the p5 sound library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- you can also load the p5 library from a local javascript file if you want to host it yourself (uncomment the following 'script' tags)-->
+    <!--script src="../js/p5.js"></script -->
+    <!--script src="../js/p5.sound.min.js"></script -->
+
+    <!-- your custom sketch file -->
+    <script src="sketch.js"></script>
+
+    <style type="text/css">
+        h1 {
+            margin-top: 50px;
+            text-align: center;
+            color: palegreen;
+            font-family: monospace;
+        }
+
+        #inspo {
+            font-family: monospace;
+            text-align: center;
+            height: 200px;
+            width: 1000px;
+            margin: auto;
+        }
+
+        #popDirect {
+            margin: 10px;
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+        #pausebtn {
+            text-align: center;
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #gobtn {
+            text-align: center;
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        #directions {
+            text-align: center;
+            margin: auto;
+        }
+        body {
+            background: skyblue;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Pusheen's Cheat Day</h1>
+    <div id="inspo">
+        <h3>Inspirations Behind the Game</h3>
+        <br>
+        <p>Pusheen's Cheat Day was largely inspired by the dinosaur game that people can play on the Google Chrome web browser when there is no wifi available. I've always personally enjoyed playing the dinosaur game even though it is very simple. In my opinion, it's the simplicity in the game that is able to captivate so many people. I also took inspiration from Pusheen the Cat as I wanted to add a cuter element to the game. It was easy to assign an 'objective' as well as an 'obstacle' in this game as Pusheen is known to be a lazy cat who enjoys desserts. Finding the graphics for this project proved to be the most difficult part as many of the images I wanted to use were not tranparent PNGs; therefore, I had to take the time and manually cut out each graphic. However, as painstaking as it was, I enjoyed being able to control what graphics I used and would want to continue making other games that test my creativity as well as my art skills.</p>
+    </div>
+    
+    <button id="popDirect">How to Play</button>
+    <div id ="directions" class ="hidden"><br>1. Choose a level to start <br> 2. Use the space bar to jump and collect cupcakes for Pusheen and to avoid the healthy carrots</div>
+    <button id = 'pausebtn' onclick ="pauseGame();">Pause Game</button>
+    <button id="gobtn" onclick="goGame();">Unpause Game</button>
+
+    <script type="text/javascript">
+        let direct = document.getElementById('directions');
+        let directbtn = document.getElementById('popDirect');
+        let click = true;
+
+        directbtn.onclick = function() {
+            if (click == true) {
+                direct.classList.remove("hidden");
+                click = false;
+            }
+            else if (click == false) {
+                direct.classList.add("hidden");
+                click = true;
+            }
+            
+        }
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
